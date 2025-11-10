@@ -167,11 +167,31 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       border-left: 4px solid var(--accent-color);
       transition: all 0.3s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
     }
 
     .publication-item:hover {
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transform: translateY(-1px);
+    }
+
+    .publication-image {
+      flex-shrink: 0;
+      width: 80px;
+      height: auto;
+    }
+
+    .publication-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .publication-content {
+      flex: 1;
     }
 
     .publication-title {
@@ -277,6 +297,13 @@
       .publication-item {
         padding: 1rem;
         margin-bottom: 2rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .publication-image {
+        align-self: center;
+        margin-bottom: 1rem;
       }
       
       .social-link {
@@ -376,178 +403,225 @@
       <h2><i class="fas fa-book-open mr-2"></i>Publications</h2>
       
       <div class="publication-item">
-        <div class="publication-title">Innovation Policies Under Economic Complexity</div>
-        <div class="publication-authors">with Ricardo Hausmann (Harvard), Muhammed A. Yildirim (Harvard), Shreyas Gadgin Matha (Harvard), and Matte Hartog (Harvard)</div>
-        <div class="publication-venue">
-          <a href="https://www.wipo.int/publications/en/details.jsp?id=4726" target="_blank">WIPO, 2024</a> • 
-          <a href="https://growthlab.hks.harvard.edu/publication/innovation-policies-under-economic-complexity/" target="_blank">Growth Lab Working Paper, 2024</a>
+        <div class="publication-image">
+          <img src="https://www.wipo.int/edocs/pubdocs/en/cover/wipo-pub-econstat-wp-79.jpg" alt="Innovation Policies Under Economic Complexity Cover" loading="lazy">
         </div>
-        <div class="description">
-          We examine how innovation policies can better address development challenges by focusing on countries' existing capabilities and the complex and tacit nature of knowledge. We argue that effective policies should be place-based and multidimensional, rather than imitating solutions from elsewhere, to support sustainable economic growth.
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-title">Global Trends in Innovation Patterns: A Complexity Approach</div>
-        <div class="publication-authors">with Ricardo Hausmann (Harvard), Muhammed A. Yildirim (Harvard), Shreyas Gadgin Matha (Harvard), and Matte Hartog (Harvard)</div>
-        <div class="publication-venue">
-          <a href="https://www.wipo.int/publications/en/details.jsp?id=4727" target="_blank">WIPO, 2024</a> • 
-          <a href="https://growthlab.hks.harvard.edu/publication/global-trends-in-innovation-patterns-a-complexity-approach/" target="_blank">Growth Lab Working Paper, 2024</a>
-        </div>
-        <div class="description">
-          We analyze global innovation patterns using data on scientific publications, patents, and trade, finding that economic complexity in each of these domains is closely linked to future growth, patenting, and publishing. Our results show that a country's embedded capabilities shape both its future diversification opportunities and the path-dependent nature of innovation.
+        <div class="publication-content">
+          <div class="publication-title">Innovation Policies Under Economic Complexity</div>
+          <div class="publication-authors">with Ricardo Hausmann (Harvard), Muhammed A. Yildirim (Harvard), Shreyas Gadgin Matha (Harvard), and Matte Hartog (Harvard)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/publications/en/details.jsp?id=4726" target="_blank">WIPO, 2024</a> • 
+            <a href="https://growthlab.hks.harvard.edu/publication/innovation-policies-under-economic-complexity/" target="_blank">Growth Lab Working Paper, 2024</a>
+          </div>
+          <div class="description">
+            We examine how innovation policies can better address development challenges by focusing on countries' existing capabilities and the complex and tacit nature of knowledge. We argue that effective policies should be place-based and multidimensional, rather than imitating solutions from elsewhere, to support sustainable economic growth.
+          </div>
         </div>
       </div>
 
       <div class="publication-item">
-        <div class="publication-title">Can We Map Innovation Capabilities?</div>
-        <div class="publication-authors">with Federico Moscatelli (WIPO), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), Eduardo Hernandez Rodriguez (Utrecht), Julio Raffo (WIPO), and Muhammed A. Yildirim (Harvard)</div>
-        <div class="publication-venue">
-          <a href="https://www.wipo.int/publications/en/details.jsp?id=4728" target="_blank">WIPO, 2024</a>
+        <div class="publication-image">
+          <img src="https://www.wipo.int/edocs/pubdocs/en/cover/wipo-pub-econstat-wp-80.jpg" alt="Global Trends in Innovation Patterns Cover" loading="lazy">
         </div>
-        <div class="description">
-          We measure innovation capabilities across science, technology, and production, using data from publications, patents, and trade. Our results reveal that higher innovation complexity is linked to economic growth and that existing capabilities predict future innovation, emphasizing the need for nuanced policy indicators and strategies.
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-title">The Missing Link: International Migration in Global Clusters of Innovation</div>
-        <div class="publication-authors">with Massimiliano Coda-Zabetta (Bordeaux), Francesco Lissoni (Bordeaux), Ernest Miguelez (Bordeaux), Julio Raffo (WIPO), and Deyun Yin (WIPO)</div>
-        <div class="publication-venue">
-          <a href="https://doi.org/10.1093/oso/9780198870067.003.0005" target="_blank">Cross-border Innovation in a Changing World: Players, Places, and Policies. Oxford University Press, 2022</a>
-        </div>
-        <div class="description">
-          This chapter analyzes global innovation clusters using geo-localized patent and publication data, emphasizing the impact of high-skilled migrants. It finds that migration-driven personal connections are often as important as, or more important than, organizational collaborations in cluster success.
+        <div class="publication-content">
+          <div class="publication-title">Global Trends in Innovation Patterns: A Complexity Approach</div>
+          <div class="publication-authors">with Ricardo Hausmann (Harvard), Muhammed A. Yildirim (Harvard), Shreyas Gadgin Matha (Harvard), and Matte Hartog (Harvard)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/publications/en/details.jsp?id=4727" target="_blank">WIPO, 2024</a> • 
+            <a href="https://growthlab.hks.harvard.edu/publication/global-trends-in-innovation-patterns-a-complexity-approach/" target="_blank">Growth Lab Working Paper, 2024</a>
+          </div>
+          <div class="description">
+            We analyze global innovation patterns using data on scientific publications, patents, and trade, finding that economic complexity in each of these domains is closely linked to future growth, patenting, and publishing. Our results show that a country's embedded capabilities shape both its future diversification opportunities and the path-dependent nature of innovation.
+          </div>
         </div>
       </div>
 
       <div class="publication-item">
-        <div class="publication-title">Tied In: The Global Network of Local Innovation</div>
-        <div class="publication-authors">with Ernest Miguelez (Bordeaux), Julio Raffo (WIPO), Massimiliano Coda-Zabetta (Bordeaux), Deyun Yin (WIPO), Francesco Lissoni (Bordeaux), and Gianluca Tarasconi (ipQuants)</div>
-        <div class="publication-venue">
-          <a href="https://www.wipo.int/publications/en/details.jsp?id=4472" target="_blank">WIPO, 2019</a>
+        <div class="publication-image">
+          <img src="https://www.wipo.int/edocs/pubdocs/en/cover/wipo-pub-econstat-wp-81.jpg" alt="Can We Map Innovation Capabilities Cover" loading="lazy">
         </div>
-        <div class="description">
-          This paper uses global patent and publication data to show that knowledge production has expanded to more countries beyond traditional innovation hubs, driven in part by the rise of Global Innovation Networks. However, within countries, knowledge activities remain concentrated in a few hotspots, leading to greater connectivity among these areas and potential distributional challenges.
+        <div class="publication-content">
+          <div class="publication-title">Can We Map Innovation Capabilities?</div>
+          <div class="publication-authors">with Federico Moscatelli (WIPO), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), Eduardo Hernandez Rodriguez (Utrecht), Julio Raffo (WIPO), and Muhammed A. Yildirim (Harvard)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/publications/en/details.jsp?id=4728" target="_blank">WIPO, 2024</a>
+          </div>
+          <div class="description">
+            We measure innovation capabilities across science, technology, and production, using data from publications, patents, and trade. Our results reveal that higher innovation complexity is linked to economic growth and that existing capabilities predict future innovation, emphasizing the need for nuanced policy indicators and strategies.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+      	<div class="publication-image">
+          <img src="https://cchacua.scholars.harvard.edu/sites/g/files/omnuum3686/files/cchacua/files/m_9780198870067.jpeg" alt="The Missing Link: International Migration in Global Clusters of Innovation" loading="lazy">
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">The Missing Link: International Migration in Global Clusters of Innovation</div>
+          <div class="publication-authors">with Massimiliano Coda-Zabetta (Bordeaux), Francesco Lissoni (Bordeaux), Ernest Miguelez (Bordeaux), Julio Raffo (WIPO), and Deyun Yin (WIPO)</div>
+          <div class="publication-venue">
+            <a href="https://doi.org/10.1093/oso/9780198870067.003.0005" target="_blank">Cross-border Innovation in a Changing World: Players, Places, and Policies. Oxford University Press, 2022</a>
+          </div>
+          <div class="description">
+            This chapter analyzes global innovation clusters using geo-localized patent and publication data, emphasizing the impact of high-skilled migrants. It finds that migration-driven personal connections are often as important as, or more important than, organizational collaborations in cluster success.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-image">
+          <img src="https://www.wipo.int/edocs/pubdocs/en/cover/wipo_pub_econstat_wp_58.jpg" alt="Tied In: The Global Network of Local Innovation Cover" loading="lazy">
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">Tied In: The Global Network of Local Innovation</div>
+          <div class="publication-authors">with Ernest Miguelez (Bordeaux), Julio Raffo (WIPO), Massimiliano Coda-Zabetta (Bordeaux), Deyun Yin (WIPO), Francesco Lissoni (Bordeaux), and Gianluca Tarasconi (ipQuants)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/publications/en/details.jsp?id=4472" target="_blank">WIPO, 2019</a>
+          </div>
+          <div class="description">
+            This paper uses global patent and publication data to show that knowledge production has expanded to more countries beyond traditional innovation hubs, driven in part by the rise of Global Innovation Networks. However, within countries, knowledge activities remain concentrated in a few hotspots, leading to greater connectivity among these areas and potential distributional challenges.
+          </div>
         </div>
       </div>
 
       <h2><i class="fas fa-cogs mr-2"></i>Research In Progress</h2>
 
       <div class="publication-item">
-        <div class="publication-title">A Century of Faculty Globalization and University Rise: From US-Born, Foreign-Educated to Foreign-Born, US-Educated</div>
-        <div class="publication-authors">with Frank Neffke (CSH)</div>
-        <div class="presentation-info">
-          <i class="fas fa-podium mr-1"></i>Presented at NBER, CSH, GeoInno, DRUID, and ResPol
-        </div>
-        <div class="description">
-          We examine the educational backgrounds and career trajectories of U.S. faculty from 1880 to 1990, to understand the reliance of U.S. universities on foreign-educated and foreign-born faculty. Our findings reveal that over a century, U.S. universities transitioned from relying U.S.-born, foreign-educated to foreign-born, U.S.-educated faculty.
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-title">Burning Bridges or Bridging Divides: Geopolitics and Collaboration in Research and Innovation</div>
-        <div class="publication-authors">with Ricardo Hausmann (Harvard), Pierre Alexandre Balland (CEPS), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), and Muhammed A. Yildirim (Harvard)</div>
-        <div class="status-badge">Revise and Resubmit to Research Policy</div>
-        <div class="description">
-          We analyse the effects of geopolitical tensions on international research and innovation collaborations. We find that belonging to different geopolitical blocs significantly reduces the likelihood of collaboration, and this association is even more pronounced in critical technologies.
+        <div class="publication-content">
+          <div class="publication-title">A Century of Faculty Globalization and University Rise: From US-Born, Foreign-Educated to Foreign-Born, US-Educated</div>
+          <div class="publication-authors">with Frank Neffke (CSH)</div>
+          <div class="presentation-info">
+            <i class="fas fa-podium mr-1"></i>Presented at NBER, CSH, GeoInno, DRUID, and ResPol
+          </div>
+          <div class="description">
+            We examine the educational backgrounds and career trajectories of U.S. faculty from 1880 to 1990, to understand the reliance of U.S. universities on foreign-educated and foreign-born faculty. Our findings reveal that over a century, U.S. universities transitioned from relying U.S.-born, foreign-educated to foreign-born, U.S.-educated faculty.
+          </div>
         </div>
       </div>
 
       <div class="publication-item">
-        <div class="publication-title">The Geographic Content of Research: Stylized Facts on the Places That Get Studied</div>
-        <div class="publication-authors">with Richard B. Freeman (Harvard), Ricardo Hausmann (Harvard), Vincent Larivière (Montreal), and Cassidy R. Sugimoto (Georgia Tech)</div>
-        <div class="presentation-info">
-          <i class="fas fa-podium mr-1"></i>Presented at IEA-WC, Granada, Harvard, ICSSI, and Growth Lab
-        </div>
-        <div class="description">
-          A paper describing stylized facts and listing potential research avenues for geographic content metrics. It extracts geographic content from titles and abstracts using simple NLP models.
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-title">Migration and Changes in Research Interest: A Life Cycle Analysis</div>
-        <div class="publication-authors">with Richard B. Freeman (Harvard)</div>
-        <div class="presentation-info">
-          <i class="fas fa-podium mr-1"></i>Presented at UNAL, PennState, Atl. Conf., Col. Conf, YSI, ICSS, IZA, WOEPSR, Bordeaux, Atl. Acad., Barcelona, WICK, Max Planck, RIE-MEIDE, Thessaloniki, and Harvard
-        </div>
-        <div class="description">
-          We study how migration changes the geographic focus of research by Colombian scientists. We find that scientists who initially studied Colombia begin to study other countries after leaving Colombia.
+        <div class="publication-content">
+          <div class="publication-title">Burning Bridges or Bridging Divides: Geopolitics and Collaboration in Research and Innovation</div>
+          <div class="publication-authors">with Ricardo Hausmann (Harvard), Pierre Alexandre Balland (CEPS), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), and Muhammed A. Yildirim (Harvard)</div>
+          <div class="status-badge">Revise and Resubmit to Research Policy</div>
+          <div class="description">
+            We analyse the effects of geopolitical tensions on international research and innovation collaborations. We find that belonging to different geopolitical blocs significantly reduces the likelihood of collaboration, and this association is even more pronounced in critical technologies.
+          </div>
         </div>
       </div>
 
       <div class="publication-item">
-        <div class="publication-title">Combining Minds to Decode Technological Recombination and Relatedness</div>
-        <div class="publication-authors">with Ricardo Hausmann (Harvard), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), Muhammed A. Yildirim (Harvard), Federico Moscatelli (WIPO), and Julio Raffo (WIPO)</div>
-        <div class="presentation-info">
-          <i class="fas fa-podium mr-1"></i>Presented at Growth Lab
-        </div>
-        <div class="description">
-          We study how technologies combine in a single individual and in collectives of individuals and firms. We find that although a single individual combines a median of two technologies, and a country combines 155, both produce a similar number of technology-technology combinations. However, the strength and significance of these associations are highly heterogeneous.
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-title">Inequalities and Hierarchies in a Century of U.S. Faculty Hiring</div>
-        <div class="publication-authors">with Frank Neffke (CSH)</div>
-        <div class="presentation-info">
-          <i class="fas fa-podium mr-1"></i>Presented at ICSSI
-        </div>
-        <div class="description">
-          We study the historical origins of current prestige hierarchies and patterns of inequality in US faculty hiring. We find that, since 1880, the supply (education) of US faculty has been highly concentrated in a few universities. Prestige hierarchies have remained persistent, even though the most prestigious universities in 1880 differ from those of today.
+        <div class="publication-content">
+          <div class="publication-title">The Geographic Content of Research: Stylized Facts on the Places That Get Studied</div>
+          <div class="publication-authors">with Richard B. Freeman (Harvard), Ricardo Hausmann (Harvard), Vincent Larivière (Montreal), and Cassidy R. Sugimoto (Georgia Tech)</div>
+          <div class="presentation-info">
+            <i class="fas fa-podium mr-1"></i>Presented at IEA-WC, Granada, Harvard, ICSSI, and Growth Lab
+          </div>
+          <div class="description">
+            A paper describing stylized facts and listing potential research avenues for geographic content metrics. It extracts geographic content from titles and abstracts using simple NLP models.
+          </div>
         </div>
       </div>
 
       <div class="publication-item">
-        <div class="publication-title">Cross-Domain Capabilities: Mapping the Links Between Science, Technology, and Production</div>
-        <div class="publication-authors">with Ricardo Hausmann (Harvard), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), Muhammed A. Yildirim (Harvard), Federico Moscatelli (WIPO), and Julio Raffo (WIPO)</div>
-        <div class="description">
-          A paper proposing an empirical methodology to map the linkages between science, technology, and production capabilities. Our findings reveal that having strong scientific and production capabilities in cross-related domains predicts subsequent technological development.
+        <div class="publication-content">
+          <div class="publication-title">Migration and Changes in Research Interest: A Life Cycle Analysis</div>
+          <div class="publication-authors">with Richard B. Freeman (Harvard)</div>
+          <div class="presentation-info">
+            <i class="fas fa-podium mr-1"></i>Presented at UNAL, PennState, Atl. Conf., Col. Conf, YSI, ICSS, IZA, WOEPSR, Bordeaux, Atl. Acad., Barcelona, WICK, Max Planck, RIE-MEIDE, Thessaloniki, and Harvard
+          </div>
+          <div class="description">
+            We study how migration changes the geographic focus of research by Colombian scientists. We find that scientists who initially studied Colombia begin to study other countries after leaving Colombia.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-content">
+          <div class="publication-title">Combining Minds to Decode Technological Recombination and Relatedness</div>
+          <div class="publication-authors">with Ricardo Hausmann (Harvard), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), Muhammed A. Yildirim (Harvard), Federico Moscatelli (WIPO), and Julio Raffo (WIPO)</div>
+          <div class="presentation-info">
+            <i class="fas fa-podium mr-1"></i>Presented at Growth Lab
+          </div>
+          <div class="description">
+            We study how technologies combine in a single individual and in collectives of individuals and firms. We find that although a single individual combines a median of two technologies, and a country combines 155, both produce a similar number of technology-technology combinations. However, the strength and significance of these associations are highly heterogeneous.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-content">
+          <div class="publication-title">Inequalities and Hierarchies in a Century of U.S. Faculty Hiring</div>
+          <div class="publication-authors">with Frank Neffke (CSH)</div>
+          <div class="presentation-info">
+            <i class="fas fa-podium mr-1"></i>Presented at ICSSI
+          </div>
+          <div class="description">
+            We study the historical origins of current prestige hierarchies and patterns of inequality in US faculty hiring. We find that, since 1880, the supply (education) of US faculty has been highly concentrated in a few universities. Prestige hierarchies have remained persistent, even though the most prestigious universities in 1880 differ from those of today.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-content">
+          <div class="publication-title">Cross-Domain Capabilities: Mapping the Links Between Science, Technology, and Production</div>
+          <div class="publication-authors">with Ricardo Hausmann (Harvard), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), Muhammed A. Yildirim (Harvard), Federico Moscatelli (WIPO), and Julio Raffo (WIPO)</div>
+          <div class="description">
+            A paper proposing an empirical methodology to map the linkages between science, technology, and production capabilities. Our findings reveal that having strong scientific and production capabilities in cross-related domains predicts subsequent technological development.
+          </div>
         </div>
       </div>
 
       <h2><i class="fas fa-pause-circle mr-2"></i>Research On Hold</h2>
 
       <div class="publication-item">
-        <div class="publication-title">Ethnicity and Collaboration in Inventor Networks</div>
-        <div class="publication-authors">with Ernest Miguelez (Bordeaux) and Francesco Lissoni (Bordeaux)</div>
-        <div class="description">
-          A paper studying the role of ethnicity, inferred from name analysis, in inventor collaborations. After controlling for different types of proximity measures, we find that inventors from the same ethnicity have a larger probability of collaborating to file a patent.
+        <div class="publication-content">
+          <div class="publication-title">Ethnicity and Collaboration in Inventor Networks</div>
+          <div class="publication-authors">with Ernest Miguelez (Bordeaux) and Francesco Lissoni (Bordeaux)</div>
+          <div class="description">
+            A paper studying the role of ethnicity, inferred from name analysis, in inventor collaborations. After controlling for different types of proximity measures, we find that inventors from the same ethnicity have a larger probability of collaborating to file a patent.
+          </div>
         </div>
       </div>
 
       <div class="publication-item">
-        <div class="publication-title">Identifying Innovation World Clusters from Multidimensional Georeferenced Data</div>
-        <div class="publication-authors">with Ernest Miguelez (Bordeaux) and Julio Raffo (WIPO)</div>
-        <div class="status-badge">Revise and Resubmit to European Planning Studies</div>
-        <div class="description">
-          A paper describing a methodology to define geographic cluster boundaries from millions of georeferenced data.
+        <div class="publication-content">
+          <div class="publication-title">Identifying Innovation World Clusters from Multidimensional Georeferenced Data</div>
+          <div class="publication-authors">with Ernest Miguelez (Bordeaux) and Julio Raffo (WIPO)</div>
+          <div class="status-badge">Revise and Resubmit to European Planning Studies</div>
+          <div class="description">
+            A paper describing a methodology to define geographic cluster boundaries from millions of georeferenced data.
+          </div>
         </div>
       </div>
 
       <h2><i class="fas fa-graduation-cap mr-2"></i>Monographs/Theses</h2>
 
       <div class="publication-item">
-        <div class="publication-title">The Geography of Knowledge: Essays on Migration and Science</div>
-        <div class="publication-venue">
-          <a href="https://shs.hal.science/tel-04835100v1" target="_blank">HAL SHS</a>
-        </div>
-        <div class="thesis-details">
-          <div><strong>Ph.D. Thesis</strong> (University of Bordeaux, 2022)</div>
-          <div><strong>Advisors:</strong> Ernest Miguelez and Valerio Sterzi</div>
-          <div><strong>Committee:</strong> Cassidy Sugimoto (Georgia Tech), Ron Boschma (Utrecht), Megan MacGarvie (Boston Univ.), and Eric Rougier (Bordeaux)</div>
+        <div class="publication-content">
+          <div class="publication-title">The Geography of Knowledge: Essays on Migration and Science</div>
+          <div class="publication-venue">
+            <a href="https://shs.hal.science/tel-04835100v1" target="_blank">HAL SHS</a>
+          </div>
+          <div class="thesis-details">
+            <div><strong>Ph.D. Thesis</strong> (University of Bordeaux, 2022)</div>
+            <div><strong>Advisors:</strong> Ernest Miguelez and Valerio Sterzi</div>
+            <div><strong>Committee:</strong> Cassidy Sugimoto (Georgia Tech), Ron Boschma (Utrecht), Megan MacGarvie (Boston Univ.), and Eric Rougier (Bordeaux)</div>
+          </div>
         </div>
       </div>
 
       <div class="publication-item">
-        <div class="publication-title">Intermediarios en las exportaciones Colombianas</div>
-        <div class="publication-venue">
-          <a href="https://hdl.handle.net/10893/7140" target="_blank">Biblioteca Digital Univalle</a>
-        </div>
-        <div class="thesis-details">
-          <div><strong>Title translation:</strong> Intermediaries in Colombian Exports</div>
-          <div><strong>Bachelor's Thesis</strong> (Universidad del Valle, 2014)</div>
-          <div><strong>Advisor:</strong> Boris Salazar Trujillo</div>
+        <div class="publication-content">
+          <div class="publication-title">Intermediarios en las exportaciones Colombianas</div>
+          <div class="publication-venue">
+            <a href="https://hdl.handle.net/10893/7140" target="_blank">Biblioteca Digital Univalle</a>
+          </div>
+          <div class="thesis-details">
+            <div><strong>Title translation:</strong> Intermediaries in Colombian Exports</div>
+            <div><strong>Bachelor's Thesis</strong> (Universidad del Valle, 2014)</div>
+            <div><strong>Advisor:</strong> Boris Salazar Trujillo</div>
+          </div>
         </div>
       </div>
 
