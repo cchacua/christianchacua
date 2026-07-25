@@ -21,8 +21,13 @@
       --border-color: #e2e8f0;
     }
 
-    * {
+    html {
       scroll-behavior: smooth;
+    }
+
+    /* Keep anchor targets clear of the fixed navbar */
+    section[id], h2[id] {
+      scroll-margin-top: 90px;
     }
 
     body {
@@ -44,15 +49,26 @@
       color: white !important;
     }
 
-    .navbar-text a {
+    .navbar-nav .nav-link {
       color: #cbd5e0 !important;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.2s ease;
+      padding: 0.25rem 0.75rem;
     }
 
-    .navbar-text a:hover {
+    .navbar-nav .nav-link:hover {
       color: white !important;
+    }
+
+    .navbar-toggler {
+      border-color: rgba(255,255,255,0.25);
+      padding: 0.35rem 0.6rem;
+    }
+
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.15);
     }
 
     .hero-section {
@@ -186,9 +202,21 @@
 
     .publication-image img {
       width: 100%;
-      height: auto;
+      /* Reserve the slot before the lazy image arrives, so loading covers
+         further down the page cannot shift anchor targets while scrolling */
+      aspect-ratio: 2 / 3;
+      object-fit: contain;
       border-radius: 4px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Landscape thumbnails (web platforms), as opposed to portrait book covers */
+    .publication-image-wide {
+      width: 200px;
+    }
+
+    .publication-image-wide img {
+      aspect-ratio: 1200 / 630;
     }
 
     .publication-content {
@@ -269,6 +297,14 @@
       margin-bottom: 0.25rem;
     }
 
+    /* Short explanatory note under a section heading */
+    .section-note {
+      margin: -1rem 0 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 65ch;
+    }
+
     footer {
       background: var(--primary-color) !important;
       color: #cbd5e0;
@@ -283,6 +319,26 @@
 
     footer a:hover {
       color: #e2e8f0;
+    }
+
+    /* Collapsed navbar on small screens */
+    @media (max-width: 767.98px) {
+      .navbar {
+        padding: 0.75rem 0;
+      }
+
+      .navbar-collapse {
+        padding-top: 0.5rem;
+      }
+
+      .navbar-nav .nav-link {
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none;
+      }
     }
 
     /* Responsive improvements */
@@ -324,14 +380,23 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#home">Christian Chacua</a>
-      <div class="navbar-text">
-        <a href="#home" class="mx-3">Home</a>
-        <a href="#research" class="mx-3">Research</a>
-        <a href="https://drive.google.com/file/d/1MxGXKkH2iXTrheCnJOG9cJAEqZXtDlxJ/view" target="_blank" class="mx-3" title="CV">CV</a>
-        <a href="#contact">Contact</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="#outreach">Outreach</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1MxGXKkH2iXTrheCnJOG9cJAEqZXtDlxJ/view" target="_blank" title="CV">CV</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -407,7 +472,23 @@
       <h1>Research</h1>
       
       <h2><i class="fas fa-book-open mr-2"></i>Publications</h2>
-      
+
+      <div class="publication-item">
+        <div class="publication-image">
+          <img src="https://ars.els-cdn.com/content/image/X00487333.jpg" alt="Research Policy Cover" loading="lazy">
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">Burning Bridges or Bridging Divides: Geopolitics and Collaboration in Research and Innovation</div>
+          <div class="publication-authors">with Ricardo Hausmann (Harvard), Pierre Alexandre Balland (CEPS), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), and Muhammed A. Yildirim (Harvard)</div>
+          <div class="publication-venue">
+            <div class="status-badge">Accepted for publication in Research Policy</div>
+          </div>
+          <div class="description">
+            We analyse the effects of geopolitical tensions on international research and innovation collaborations. We find that belonging to different geopolitical blocs significantly reduces the likelihood of collaboration, and this association is even more pronounced in critical technologies.
+          </div>
+        </div>
+      </div>
+
       <div class="publication-item">
         <div class="publication-image">
           <img src="files/complexity_cover-01.jpg" alt="Complexity: Hausmann-Hidalgo Economic Complexity Cover" loading="lazy">
@@ -443,7 +524,7 @@
 
       <div class="publication-item">
         <div class="publication-image">
-          <img src="https://tind.wipo.int/nanna/record-thumb/small_59227_0.jpg" alt="Innovation Capabilities Outlook 2026: Technical Notes" loading="lazy">
+          <img src="files/wipo_outlook_2026_technical_notes_cover.jpg" alt="Innovation Capabilities Outlook 2026: Technical Notes" loading="lazy">
         </div>
         <div class="publication-content">
           <div class="publication-title">Innovation Capabilities Outlook 2026: Technical Notes</div>
@@ -558,7 +639,111 @@
         </div>
       </div>
 
+      <h2 id="institutional"><i class="fas fa-landmark mr-2"></i>Institutional Reports and Platforms</h2>
+      <p class="section-note">
+        Outputs published under the institutional authorship of the World Intellectual Property
+        Organization (WIPO), produced by research teams I was part of.
+      </p>
+
+      <div class="publication-item">
+        <div class="publication-image">
+          <img src="files/wipo_outlook_2026_cover.jpg" alt="Innovation Capabilities Outlook 2026 Cover" loading="lazy">
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">Innovation Capabilities Outlook 2026</div>
+          <div class="publication-authors">World Intellectual Property Organization (institutional author)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/web-publications/innovation-capabilities-outlook-2026/en/index.html" target="_blank">WIPO, Geneva, 2026</a>
+            <div class="status-badge">Member of the research team</div>
+          </div>
+          <div class="description">
+            The first edition of WIPO's flagship report on innovation capabilities, mapping the
+            scientific, technological, and productive capabilities of countries and their
+            potential for diversification. The methodology behind the report is documented in the
+            accompanying <a href="https://tind.wipo.int/record/59227?v=pdf" target="_blank">Technical Notes</a>.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-image publication-image-wide">
+          <a href="https://www.wipo.int/innovation-capabilities-navigator/" target="_blank">
+            <img src="files/platform_capabilities_navigator.jpg" alt="Innovation Capabilities Navigator screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">
+            <a href="https://www.wipo.int/innovation-capabilities-navigator/" target="_blank">Innovation Capabilities Navigator</a>
+          </div>
+          <div class="publication-authors">World Intellectual Property Organization (institutional author)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/innovation-capabilities-navigator/" target="_blank">wipo.int/innovation-capabilities-navigator</a>
+            <div class="status-badge">Member of the research team</div>
+          </div>
+          <div class="description">
+            An interactive platform that lets users explore the scientific, technological, 
+            productive, and entrepreneurial capabilities of countries, based on publication,
+            patent, trade and trademark data.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-image publication-image-wide">
+          <a href="https://www.wipo.int/innovation-complexity-navigator/" target="_blank">
+            <img src="files/platform_complexity_navigator.jpg" alt="Innovation Complexity Navigator screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">
+            <a href="https://www.wipo.int/innovation-complexity-navigator/" target="_blank">Innovation Complexity Navigator</a>
+          </div>
+          <div class="publication-authors">World Intellectual Property Organization (institutional author)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/innovation-complexity-navigator/" target="_blank">wipo.int/innovation-complexity-navigator</a>
+            <div class="status-badge">Member of the research team</div>
+          </div>
+          <div class="description">
+            An interactive platform built on complexity and relatedness indicators, helping
+            innovation ecosystems assess their current strengths and identify feasible directions
+            for diversification.
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-image">
+          <img src="https://www.wipo.int/edocs/pubdocs/en/cover/wipo_pub_944_2019.jpg" alt="World Intellectual Property Report 2019 Cover" loading="lazy">
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">World Intellectual Property Report 2019 — The Geography of Innovation: Local Hotspots, Global Networks</div>
+          <div class="publication-authors">World Intellectual Property Organization (institutional author)</div>
+          <div class="publication-venue">
+            <a href="https://www.wipo.int/en/web/world-ip-report/2019/index" target="_blank">WIPO, Geneva, 2019</a>
+            <div class="status-badge">Member of the research team</div>
+          </div>
+          <div class="description">
+            WIPO's biennial flagship report, documenting how innovative activity has spread across
+            more countries while remaining concentrated in a few local hotspots that are
+            increasingly connected through global innovation networks.
+          </div>
+        </div>
+      </div>
+
       <h2><i class="fas fa-cogs mr-2"></i>Research In Progress</h2>
+
+      <div class="publication-item">
+        <div class="publication-content">
+          <div class="publication-title">Global Academic Collaborations in the Surge of AI for Research</div>
+          <div class="publication-authors">with Andres F. Castro Torres (BSC)</div>
+          <div class="presentation-info">
+            <i class="fas fa-podium mr-1"></i>Presented at ICSSI 2026
+          </div>
+          <div class="description">
+            Does the adoption of AI in research democratize global collaboration networks, or does it reinforce existing inequalities? Using OpenAlex articles published between 1990 and 2024, we classify papers according to whether they rely on AI-based methods, on other methods, or on none, and we track how the geographic concentration of co-authorship evolves. We find that collaborations in AI-based research have become less concentrated globally, pointing to a potential democratizing force. Yet most collaborations still take place within a single country, so spatial inequalities may persist.
+          </div>
+        </div>
+      </div>
 
       <div class="publication-item">
         <div class="publication-content">
@@ -569,17 +754,6 @@
           </div>
           <div class="description">
             We examine the educational backgrounds and career trajectories of U.S. faculty from 1880 to 1990, to understand the reliance of U.S. universities on foreign-educated and foreign-born faculty. Our findings reveal that over a century, U.S. universities transitioned from relying U.S.-born, foreign-educated to foreign-born, U.S.-educated faculty.
-          </div>
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-content">
-          <div class="publication-title">Burning Bridges or Bridging Divides: Geopolitics and Collaboration in Research and Innovation</div>
-          <div class="publication-authors">with Ricardo Hausmann (Harvard), Pierre Alexandre Balland (CEPS), Shreyas Gadgin Matha (Harvard), Matte Hartog (Harvard), and Muhammed A. Yildirim (Harvard)</div>
-          <div class="status-badge">Revise and Resubmit to Research Policy</div>
-          <div class="description">
-            We analyse the effects of geopolitical tensions on international research and innovation collaborations. We find that belonging to different geopolitical blocs significantly reduces the likelihood of collaboration, and this association is even more pronounced in critical technologies.
           </div>
         </div>
       </div>
@@ -646,28 +820,6 @@
         </div>
       </div>
 
-      <h2><i class="fas fa-pause-circle mr-2"></i>Research On Hold</h2>
-
-      <div class="publication-item">
-        <div class="publication-content">
-          <div class="publication-title">Ethnicity and Collaboration in Inventor Networks</div>
-          <div class="publication-authors">with Ernest Miguelez (Bordeaux) and Francesco Lissoni (Bordeaux)</div>
-          <div class="description">
-            A paper studying the role of ethnicity, inferred from name analysis, in inventor collaborations. After controlling for different types of proximity measures, we find that inventors from the same ethnicity have a larger probability of collaborating to file a patent.
-          </div>
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-content">
-          <div class="publication-title">Identifying Innovation World Clusters from Multidimensional Georeferenced Data</div>
-          <div class="publication-authors">with Ernest Miguelez (Bordeaux) and Julio Raffo (WIPO)</div>
-          <div class="status-badge">Revise and Resubmit to European Planning Studies</div>
-          <div class="description">
-            A paper describing a methodology to define geographic cluster boundaries from millions of georeferenced data.
-          </div>
-        </div>
-      </div>
 
       <h2><i class="fas fa-graduation-cap mr-2"></i>Monographs/Theses</h2>
 
@@ -699,6 +851,32 @@
         </div>
       </div>
 
+      <h2 id="outreach"><i class="fas fa-users mr-2"></i>Outreach</h2>
+
+      <div class="publication-item">
+        <div class="publication-image publication-image-wide">
+          <a href="https://redcientificacol.org" target="_blank">
+            <img src="files/platform_red_cientifica.jpg" alt="Red Científica Colombiana screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="publication-content">
+          <div class="publication-title">
+            <a href="https://redcientificacol.org" target="_blank">Red Científica Colombiana</a>
+          </div>
+          <div class="publication-authors">with Julian Prieto</div>
+          <div class="publication-venue">
+            <a href="https://redcientificacol.org" target="_blank">redcientificacol.org</a>
+            <div class="status-badge">Open-access platform, 2026</div>
+          </div>
+          <div class="description">
+            An open-access directory mapping Colombian researchers worldwide, combining an
+            interactive map, ORCID-based profiles, and co-authorship networks. A volunteer
+            initiative that reimplements an earlier project led by Julian Prieto, Mónica Medina, Ana
+            Saborio, and Esmeralda Bermeo.
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -718,13 +896,11 @@
   <!-- Smooth scrolling enhancement -->
   <script>
     $(document).ready(function() {
-      // Smooth scrolling for navbar links
-      $('a[href*="#"]').on('click', function(e) {
-        e.preventDefault();
-        
-        $('html, body').animate({
-          scrollTop: $($(this).attr('href')).offset().top - 80
-        }, 600, 'linear');
+      // In-page links: close the collapsed menu, then let the browser scroll.
+      // Native scrolling is used on purpose -- it honours scroll-margin-top and
+      // keeps the anchor in place when lazy-loaded images resize the page.
+      $('a[href^="#"]').on('click', function() {
+        $('#mainNav').collapse('hide');
       });
     });
   </script>
